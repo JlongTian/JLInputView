@@ -37,3 +37,5 @@
 
 @end
 ```
+
+![效果图](https://github.com/JlongTian/JLInputView/blob/master/image/show.gif)
