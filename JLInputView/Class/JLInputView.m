@@ -131,14 +131,10 @@
         
     }
     
-    if (!self.scrollEnabled) {
-        
-        //修改父控件的高度，输入框跟着改变
-        _textHeightChangeBlock(self.text,height);
-        //父控件重新布局
-        [self.superview layoutIfNeeded];
-        
-    }
+    //修改父控件的高度，输入框跟着改变
+    _textHeightChangeBlock(self.text,height);
+    //父控件重新布局
+    [self.superview layoutIfNeeded];
     
 }
 
