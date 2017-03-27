@@ -1,41 +1,22 @@
 # JLInputView
 实现微信输入框效果（textView自适应文字高度），用法如下：
 ```objc
-    #import <UIKit/UIKit.h>
-
-@interface JLInputView : UITextView
-/**
- *  textView最大行数
- */
-@property (nonatomic, assign) NSUInteger maxNumberOfLines;
-
-/**
- *  文字高度改变block → 文字高度改变会自动调用
- *  block参数(text) → 文字内容
- *  block参数(textHeight) → 文字高度
- */
-@property (nonatomic, strong) void(^textHeightChangeBlock)(NSString *text,CGFloat textHeight);
-
-/**
- *  设置圆角
- */
-@property (nonatomic, assign) NSUInteger cornerRadius;
-
-/**
- *  占位文字
- */
-@property (nonatomic, strong) NSString *placeholder;
-
-/**
- *  占位文字颜色
- */
-@property (nonatomic, strong) UIColor *placeholderColor;
-/**
- *  是否需要隐藏占位文字
- */
-@property (nonatomic,assign) BOOL placeholderHidden;
-
-@end
+    // 设置文本框占位文字和字体颜色
+    _inputView.placeholder = @"请输入内容";
+    _inputView.placeholderColor = [UIColor lightGrayColor];
+    
+    //如果不需要占位文字就将placeholderHidden设置为YES
+    //_inputView.placeholderHidden = YES;
+    
+    // 监听文本框文字高度改变
+    _inputView.textHeightChangeBlock = ^(NSString *text,CGFloat textHeight){
+    
+        // 文本框文字高度改变会自动执行这个block，如果inputView的父视图需要随着它的高度改变而改变，那么就在这里修改高度
+        
+    };
+    
+    // 设置文本框最大行数
+    _inputView.maxNumberOfLines = 4;
 ```
 效果图：
 
